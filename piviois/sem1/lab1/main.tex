@@ -1,0 +1,403 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[russian]{babel}
+\usepackage{multicol}
+\usepackage{geometry}  
+\setcounter{page}{15}
+\usepackage{setspace}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, nolistsep}
+
+
+\geometry{
+    left=2cm,                % Левый отступ
+    right=2cm,               % Правый отступ
+    top=2cm,                   % Верхний отступ
+    bottom=2cm                 % Нижний отступ
+}
+
+\title{\huge \vspace{-1cm}\textbf{Principles of Decentralized Problem Solving
+Within the Ecosystem of Next-Generation
+Intelligent Computer Systems}}
+\author{Daniil Shunkevich}
+\date{\vspace{-0.3cm}\textit{Belarusian State University of\\
+Informatics and Radioelectronics
+} \\
+Minsk, Belarus\\
+Email: shunkevich@bsuir.by}
+
+
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}    % Начало окружения двух колонок
+\textbf{\textit{Abstract} — The paper considers the principles of decentralized problem solving within the ecosystem of nextgeneration intelligent computer systems, in particular, the
+architecture of such an ecosystem is considered from the
+point of view of organizing the process of problem solving,
+the roles of systems involved in the process of problem
+solving are separated. The principles of forming a collective
+of systems involved in problem solving, the stages of solving
+a particular problem by the resulting collective are specified.} \\
+
+\textbf{\textit{Keywords} — Decentralized AI, multi-agent approach, OSTIS technology, OSTIS Ecosystem, problem solver, sc-agent,
+ostis-system}
+
+\begin{center}
+    I. Introduction 
+\end{center}
+
+
+
+Currently, one of the key trends in the field of intelligent technologies is the so-called decentralized artificial
+intelligence [1], [2]. This trend is caused, on the one hand,
+by the development and widespread use of autonomous
+mobile devices (both self-sufficient and as part of more
+complex systems, as in the case of various kinds of
+sensors), which interact intensively when solving tasks
+together, which, in particular, led to the emergence and
+development of such a trend as the Internet of Things.
+On the other hand, decentralization is necessary when
+solving problems of complex automation of various
+processes, for example, production. In this case, the
+implementation of an automation system with a monolithic centralized architecture becomes impossible, in this
+regard, the task of integrating a variety of heterogeneous
+devices and subsystems into a single information space,
+within which various models and methods of artificial
+intelligence are subsequently applied. There is a large
+number of studies aimed at developing the principles
+of problem solving in distributed teams of interacting
+computer systems [1]–[3]. 
+
+
+In turn, the complex automation of various human
+activities and the development of corresponding complex
+intelligent systems of automation leads to the need to
+integrate within such systems different types of knowledge and different problem solving models and to ensure
+the possibility of joint use of these models in solving
+complex problems [4], [5]. In addition, the problem of
+reducing the labor intensity of not only the development
+of such systems, but also their evolution and maintenance
+at all stages of the life cycle is relevant. The solution of
+the mentioned problem becomes possible when providing
+syntactic and semantic compatibility of models of representation of different types of knowledge and different
+problem solving models. In other words, to solve the
+problem of complex automation of human activity, it is
+necessary to provide \underline{convergence} of different models of
+representation and information processing in intelligent
+systems. 
+
+
+At the same time, as it has already been noted, an important trend in the development of artificial intelligence
+technologies is the desire to decentralize the solution of
+various problems, in connection with which the creation
+of \textit{next-generation intelligent computer systems} with a
+high level of \textbf{interoperability} is increasingly relevant.
+In this case, by interoperability [6] is meant not just
+ensuring compatibility of systems at the level of technical
+implementation (coordination of interaction protocols,
+program interfaces, etc.), but ensuring their semantic
+compatibility and ability to collectively solve complex
+problems. This implies a significant development and
+increase in the level of formalization of the theory of
+intelligent computer systems, rethinking of the existing
+technologies of their development and maintenance in the
+context of ensuring their convergence, and ultimately –
+the creation of a comprehensive technology of designing
+intelligent computer systems of a new generation, taking
+into account the need to develop not only individual intelligent computer systems, but also decentralized collectives of such systems, capable of jointly solving complex
+problems.
+
+
+OSTIS Technology is proposed as a comprehensive design technology for \textit{next-generation intelligent computer systems} [4]. Next-generation intelligent computer systems
+developed on the basis of this technology are called
+15
+\textit{ostis-systems}. OSTIS Technology is based on a universal
+method of semantic representation (coding) of information in the memory of intelligent systems, called \textit{SCcode}. Texts of \textit{SC-code} (sc-texts, sc-constructions) represent unified semantic networks with basic theoreticalmultiple interpretation. The elements of such semantic networks are called sc-elements (sc-nodes and scconnectors, which, in turn, can be sc-arc or sc-edges
+depending on their orientation). 
+
+
+Universality and unification of \textit{SC-code} allows describing any types of knowledge and any methods of problem
+solving on its basis, which, in its turn, greatly simplifies
+their integration both within one system and within a
+collective of such systems. 
+
+
+The basis of the knowledge base developed according
+to the OSTIS Technology is a hierarchical system of
+semantic models of \textit{subject} areas and \textit{ontologies}, among
+which there is a universal Kernel of semantic models
+of knowledge bases and methodology of development of
+semantic models of knowledge bases, providing semantic
+compatibility of the developed knowledge bases. The
+basis of the ostis-system problem solver is a set of
+agents interacting exclusively through the specification
+of information processes they perform in the semantic
+memory (\textit{sc-agents}). 
+
+
+All of the above principles together allow to ensure
+semantic compatibility and simplify integration of various components of computer systems as well as of
+such systems themselves. Within the framework of \textit{OSTIS
+Technology} several universal variants of visualization of
+SC-code constructions have been proposed. This paper
+will use examples in \textit{SCg-code}, a graphical variant of
+visualization of SC-code constructs, and \textit{SCn-code}, a
+structured hypertext variant of visualization of SC-code
+constructs. 
+
+
+Within the framework of OSTIS Technology the models, methods and means of developing hybrid knowledge
+bases and problem solvers of next-generation intelligent
+computer systems are considered in detail, including the
+issues of providing convergence of different types of
+knowledge and different models of problem solving [4].
+At the same time, the problem of organizing the process
+of problem solving by a decentralized collective of ostissystems remains relevant. 
+
+
+Thus, the task of developing a theory of problem
+solving in \underline{distributed} \underline{collectives} of interoperable \textit{next-generation intelligent computer systems} remains relevant. 
+
+
+This task solving is proposed to be carried out on the
+basis of the concept of ecosystem of interacting ostissystems (\textbf{\textit{OSTIS Ecosystem}}). In the paper [7] general
+approaches to problem solving within the framework of
+the OSTIS Ecosystem are considered, in this paper the
+architecture of the OSTIS Ecosystem and the principles
+of organizing problem solving within this ecosystem will
+be specified. \\ 
+
+\begin{center}
+    II. OSTIS Ecosystem Architecture
+\end{center}
+ \\ \\
+A. \textit{Concept and main tasks of the OSTIS Ecosystem} \\ 
+
+
+\textbf{\textit{OSTIS Ecosystem}} — a sociotechnical ecosystem,
+which is a collective of interacting semantic computer
+systems and provides permanent support for the evolution
+and semantic compatibility of all its constituent systems
+throughout their life cycle [4], [8].
+
+
+In order to talk about the principles of problem solving
+within the OSTIS Ecosystem, it is necessary to clarify the
+architecture of the OSTIS Ecosystem and the advantages
+of the concept of such an ecosystem in the context of
+decentralized problem solving. 
+
+The \textit{OSTIS Ecosystem}, is a collective of interacting
+(via the Internet) [4]: 
+\begin{itemize}
+    \item \textit{ostis-system} themselves;
+    \item users of the specified \textit{ostis-system} (both end users
+and developers);
+    \item some computer systems that are not \textit{ostis-system},
+but are considered by them as additional information
+resources or services.
+\end{itemize}
+
+\textit{OSTIS Ecosystem} is a form of implementation, improvement and application of \textit{OSTIS Technology} and,
+therefore, is a form of creation, development, selforganization of the market of semantically compatible
+computer systems and includes all resources necessary
+for this — informational, technological, personnel, organizational, infrastructural. 
+
+
+One of the important tasks of the OSTIS Ecosystem is
+to ensure that the compatibility of the computer systems
+included in the OSTIS Ecosystem is maintained at all
+times, both during their development and during their
+operation. The problem here is that during the operation
+of the systems included in the OSTIS Ecosystem, they
+may change and thus compatibility may be compromised. 
+
+
+The solution of the above task involves solving the
+following subtasks: 
+
+\begin{itemize}
+    \item operational implementation of all agreed changes to
+the standard of \textit{ostis-system} (including changes to
+the systems of used concepts and their corresponding terms) [9];
+    \item permanent support for a high level of mutual understanding of all systems included in the OSTIS
+Ecosystem and all their users; 
+   \item corporate solution of various complex problems
+requiring coordination of activities of several (most
+often, a priori unknown) \textit{ostis-system}, as well as,
+possibly, some users. 
+\end{itemize}
+
+
+Thus, the \textit{OSTIS Ecosystem} is the basis for the transition from independent (autonomous, separate, integral)
+\textit{ostis-systems} to collectives of independent \textit{ostis-systems},
+i.e. to distributed \textit{ostis-systems}.  \\ \\
+
+
+\hspace{-0.5cm}B. \textit{OSTIS Ecosystem Agent Typology}
+
+
+Let us consider the classification of ostis-systems in
+terms of their independence (interaction with other ostis-systems within the OSTIS Ecosystem):\\ \\
+\textbf{\textit{ostis-system}}
+
+\hspace{-0.5cm}$\Rightarrow$ subdividing*: 
+ \begin{itemize}
+     \item [\textbf{\{}•] \textit{independent ostis-system}
+     \begin{description}
+        \item[:=] [complete \textit{ostis-system} that must independently solve a corresponding set of tasks
+and, in particular, interact with the external
+environment (both verbally — with users and
+other computer systems, and non-verbally).]
+    \end{description}
+   \item \textit{embedded ostis-system}
+   \begin{description}
+        \item[:=] [intelligent computer subsystem developed according to \textit{OSTIS Technology} and realizing
+part of the functionality of ostis-system of a
+higher hierarchy level]
+        \item[:=][\textit{ostis-system} integrated into independent \textit{ostis-system}]
+    \end{description}
+
+     $\Rightarrow$ \textit{subdividing*:}
+     
+\hspace{0.4cm} \textbf{\{}• \textit{atomic embedded ostis-system}
+\begin{description}
+        \item[\hspace{1cm}:=][\textit{embedded ostis-system} that does not
+        \item[]\hspace{1.3cm} include any other \textit{embedded ostis-}
+        \item[]\hspace{1.3cm} \textit{system}]
+    \end{description}
+
+ 
+\hspace{0.6cm} • \textit{non-atomic embedded ostis-system}
+\hspace{0.9cm} $\supset$ \textit{ostis-system interface} 
+
+\hspace{0.6cm}\textbf{\}}
+
+  \item \textit{ostis-systems collective}
+  \begin{description}
+        \item[:=][group of communicating ostis-systems,
+which may include not only independent
+ostis-systems, but also collectives of ostissystems]
+        \item[:=] [distributed ostis-system]
+    \end{description}
+
+
+
+
+
+\end{itemize}
+
+
+\hspace{-0.2cm}\textbf{\}}
+
+
+We emphasize that the \textbf{\textit{independent ostis-systems}} that
+are part of the \textit{OSTIS Ecosystem} have special requirements:
+\begin{itemize}
+    \item They should have all the necessary knowledge and
+skills to exchange messages and to organize purposeful interactions with other \textit{ostis-systems} within the
+\textit{OSTIS Ecosystem.}
+   \item In the conditions of constant change and evolution of \textit{ostis-systems} included in \textit{OSTIS Ecosystem},
+each of them should \underline{self monitor the state of
+its compatibility} (consistency) with all other \textit{ostis-systems}, i.e. it should independently maintain this
+compatibility, coordinating with other \textit{ostis-systems}
+all the changes that require coordination, occurring
+in itself and in other systems.
+     \item Each system included in the \textit{OSTIS Ecosystem} shall: \\
+– Learning intensely, actively and purposefully
+(both with the help of developmental teachers and
+independently).\\
+– Notify all other systems of proposed or finalized
+changes to the \textit{ontologies} and, in particular, to the
+set of \textit{concepts} used.\\
+– Accept proposals from other ostis-systems for
+changes to the \textit{ontologies} (including the set of
+concepts used) in order to agree or approve these
+proposals.\\
+– Implement approved changes to the \textit{ontologies}
+stored in its knowledge base.\\
+– Contribute to maintaining a high level of semantic compatibility not only with other \textit{ostis-systems} within the \textit{OSTIS Ecosystem}, but also
+with its \textit{users} (i.e. educate them, inform them
+about changes in ontologies).
+\end{itemize}
+
+
+Thus, the OSTIS Ecosystem is essentially a distributed
+\textit{multi-agent system} [10], which includes \textit{agents of OSTIS
+Ecosystem}, which are the subjects of the activities performed within the\textit{ OSTIS Ecosystem}. Let’s consider the
+classification of \textit{agents of OSTIS Ecosystem} taking into
+account the classification of ostis-systems given above.
+[8].\\
+
+
+\hspace{-0.6cm}\textbf{\textit{agent of OSTIS Ecosystem}}
+
+
+\hspace{-0.6cm}\textit{$\Rightarrow$ subdividing*:}
+\begin{itemize}
+\setlength{\parskip}{0pt}
+    \item [\textbf{\{}•] \textit{individual ostis-system of OSTIS 
+    Ecosystem}
+
+
+\textit{\Rightarrow subdividing*: }
+
+
+\begin{description}
+        \item[]\hspace{0.2cm}\textbf{\{}•\hspace{0.2cm}\textit{independent ostis-system of OSTIS}
+        \item[]\hspace{0.7cm}\textit{Ecosystem}
+        \item[]\hspace{0.4cm}•\textit{ embedded ostis-system of OSTIS}
+        \item[]\hspace{0.7cm}\textit{Ecosystem}
+    \end{description}
+
+
+
+
+
+
+\hspace{0.5cm}\textbf{\}}
+\setlength{\parskip}{0pt}
+ \item \textit{user of the OSTIS Ecosystem}
+ \item \textit{ostis-community }
+ 
+\textit{\Rightarrow subdividing*:}
+
+
+\hspace{0.4cm}\textbf{\{} • \textit{ simple ostis-community}
+
+
+
+\hspace{0.6cm} • \textit{hierarchical ostis-community}
+
+
+\hspace{0.4cm}\textbf{\}}
+\end{itemize} \\
+\hspace{0.4cm}\textbf{\}}
+\\ \\
+\hspace{-0.4cm}\textit{\vspace{0.2cm}C. The concept of ostis-community}
+
+
+\textit{Ostis-community} is a stable fragment of \textit{OSTIS Ecosystem}, providing complex automation of a certain part of
+collective human activity and permanent increase of its
+efficiency.
+
+
+A \textit{hierarchical ostis-community} is a \textit{ostis-community},
+at least one of whose members is some other \textit{ostis-community}. \textit{Ostis-community} generally includes not only
+\textit{ostis-systems collective}, but also a certain collective of
+people (users and developers of the corresponding \textit{ostis-systems}). Each\textit{ OSTIS Ecosystem agent} (both individual
+and collective) can become a member of any ostis-community of the OSTIS Ecosystem on his/her own
+initiative after proper registration of [4], [8].
+
+
+\textit{OSTIS Ecosystem} is the maximal \textit{hierarchical ostis-community} that provides comprehensive automation of
+
+\end{multicols}
+
+
+
+
+
+
+\end{document}
