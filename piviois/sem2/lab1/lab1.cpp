@@ -1,164 +1,155 @@
+
 #include <iostream>
 #include <vector>
 #include <queue>
 
 using namespace std;
 
-class Graph {
-private:
-    int n;
-    int m;
-    vector<vector<int>> matrix;
-public:
+struct Graph {
+    int n, m;  // Количество вершин и дуг
+    vector<vector<int>> matrix;  // Матрица инцидентности
+};
 
-    void InputMatrix() {
-        cout << "Введите количество вершин и дуг: ";
-        cin >> n >> m;
+void InputMatrix(Graph* graph) {
+    cout << "Введите количество вершин и дуг: ";
+    cin >> graph->n >> graph->m;
 
-        matrix.resize(n, vector<int>(m, 0));
+    graph->matrix.resize(graph->n, vector<int>(graph->m, 0));
 
-        cout << "Введите элементы матрицы инцидентности (" << n << " строк и " << m << " столбцов):\n";
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                cin >> matrix[i][j];
-            }
+    cout << "Введите элементы матрицы инцидентности (" << graph->n << " строк и " << graph->m << " столбцов):\n";
+    for (int i = 0; i < graph->n; i++) {
+        for (int j = 0; j < graph->m; j++) {
+            cin >> graph->matrix[i][j];
         }
     }
+}
 
-    void PrintMatrix() {
-        cout << "\nМатрица инцидентности:" << endl;
-        for (const auto& n : matrix) {
-            for (int val : n) {
-                cout << val << " ";
-            }
-            cout << endl;
+void PrintMatrix(const Graph* graph) {
+    cout << "\nМатрица инцидентности:\n";
+    for (const auto& row : graph->matrix) {
+        for (int val : row) {
+            cout << val << " ";
         }
         cout << endl;
     }
+    cout << endl;
+}
 
-    void AddVertex() {
-        vector<int> newVertex(m, 0);
-        matrix.push_back(newVertex);
-        n++;
-        cout << "Вершина добавлена." << endl << endl;
-    }
-    void DelVertex()
-    {
-        int numVertex;
-        cout << endl << "Выберите вершину, которую хотите удалить: " << endl;
-        cin >> numVertex;
+void AddVertex(Graph* graph) {
+    vector<int> newVertex(graph->m, 0);
+    graph->matrix.push_back(newVertex);
+    graph->n++;
+    cout << "Вершина добавлена.\n";
+}
 
-        numVertex--;
-        if (numVertex >= 0 && numVertex < n){
-            for (int i = matrix[0].size() - 1; i >= 0; i--){
-                if (matrix[numVertex][i] != 0){
-                    for (int k = 0; k < n; k++){
-                        matrix[k].erase(matrix[k].begin() + i);
-                    }
-                    m--;
-                }
-            }
-            matrix.erase(matrix.begin() + numVertex);
-            cout << "Вершина " << ++numVertex << " удалена." << endl;
-            n--;
-        }
-        else{
-            cout << "Недопустимый индекс для удаления элемента." << endl;
-            return;
-        }
-    }
-    void AddArc()
-    {
-        int fromVertex, toVertex;
-        cout << endl << "Введите 2 вершины, от которой и до которой будет проведена дуга: " << endl;
-        cin >> fromVertex >> toVertex;
-        fromVertex--;
-        toVertex--;
-        if (fromVertex == toVertex){
-            cout << "Невозможно создать петлю. Введите 2 корректных индекса." << endl;
-            return;
-        }
-        if ((fromVertex >= 0 && fromVertex < matrix.size()) && (toVertex >= 0 && toVertex < matrix.size())){
-            for (int i = 0; i < n; i++){
-                if (i == fromVertex){
-                    matrix[i].push_back(-1);
-                }
-                else if (i == toVertex){
-                    matrix[i].push_back(1);
-                }
-                else{
-                    matrix[i].push_back(0);
-                }
-            }
-            m++;
-        }
-        else{
-            cout << "Недопустимый индекс." << endl;
-            return;
-        }
-        cout << "Дуга от вершины " << fromVertex + 1 << " до вершины " << toVertex + 1 << " добавлена." << endl;
-    }
-    void DelArc()
-    {
-        int numArc;
-        cout << endl << "Введите номер дуги, которую хотите удалить: " << endl;
-        cin >> numArc;
+void DelVertex(Graph* graph) {
+    int numVertex;
+    cout << "\nВведите номер вершины для удаления: ";
+    cin >> numVertex;
 
-        if (numArc >= 0 && numArc <= matrix[0].size()){
-            for (int i = 0; i < n; i++){
-                matrix[i].erase(matrix[i].begin() + numArc - 1);
+    numVertex--;
+    if (numVertex >= 0 && numVertex < graph->n) {
+        for (int i = graph->matrix[0].size() - 1; i >= 0; i--) {
+            if (graph->matrix[numVertex][i] != 0) {
+                for (int k = 0; k < graph->n; k++) {
+                    graph->matrix[k].erase(graph->matrix[k].begin() + i);
+                }
+                graph->m--;
             }
-            m--;
-            cout << "Дуга удалена." << endl;
+        }
+        graph->matrix.erase(graph->matrix.begin() + numVertex);
+        cout << "Вершина " << numVertex + 1 << " удалена.\n";
+        graph->n--;
+    }
+    else {
+        cout << "Ошибка: некорректный индекс.\n";
+    }
+}
+
+void AddArc(Graph* graph) {
+    int fromVertex, toVertex;
+    cout << "\nВведите 2 вершины (откуда -> куда): ";
+    cin >> fromVertex >> toVertex;
+    fromVertex--;
+    toVertex--;
+
+    if (fromVertex < 0  fromVertex >= graph->n  toVertex < 0  toVertex >= graph->n  fromVertex == toVertex) {
+        cout << "Ошибка: некорректные индексы.\n";
+        return;
+    }
+
+    for (int i = 0; i < graph->n; i++) {
+        if (i == fromVertex) {
+            graph->matrix[i].push_back(-1);
+        }
+        else if (i == toVertex) {
+            graph->matrix[i].push_back(1);
         }
         else {
-            cout << "Недопустимый индекс." << endl;
-            return;
+            graph->matrix[i].push_back(0);
         }
     }
+    graph->m++;
+    cout << "Дуга добавлена.\n";
+}
 
-    void BFS() {
-        int firstVertex;
-        cout << "Введите номер вершины, с которой начать обход в ширину: ";
-        cin >> firstVertex;
+void DelArc(Graph* graph) {
+    int numArc;
+    cout << "\nВведите номер дуги для удаления: ";
+    cin >> numArc;
 
-        if (cin.fail() || firstVertex < 1 || firstVertex > n) {
-            cin.clear();
-            cin.ignore(1000, '\n');
-            cout << "Некорректный ввод." << endl;
-            return;
+    if (numArc > 0 && numArc <= graph->m) {
+        for (int i = 0; i < graph->n; i++) {
+            graph->matrix[i].erase(graph->matrix[i].begin() + numArc - 1);
         }
+        graph->m--;
+        cout << "Дуга удалена.\n";
+    }
+    else {
+        cout << "Ошибка: некорректный индекс.\n";
+    }
+}
 
-        firstVertex--; 
-        queue<int> q;
-        vector<bool> visited(n, false); 
+void BFS(Graph* graph) {
+    int firstVertex;
+    cout << "Введите начальную вершину для обхода: ";
+    cin >> firstVertex;
+    firstVertex--;
 
-        q.push(firstVertex);
-        visited[firstVertex] = true; 
+    if (firstVertex < 0 || firstVertex >= graph->n) {
+        cout << "Ошибка: некорректный индекс.\n";
+        return;
+    }
 
-        cout << "Дерево обхода в ширину:" << endl;
+    queue<int> q;
+    vector<bool> visited(graph->n, false);
 
-        while (!q.empty()) {
-            int v = q.front();
-            q.pop();
-            cout << "Посещена вершина: " << v + 1 << endl;
+    q.push(firstVertex);
+    visited[firstVertex] = true;
 
+    cout << "Обход в ширину:\n";
 
-            for (int u = 0; u < m; u++) { // u индекс дуги
-                if (matrix[v][u] == -1) { 
-                    for (int k = 0; k < n; k++) { 
-                        if (matrix[k][u] == 1 && !visited[k]) { 
-                            visited[k] = true; 
-                            q.push(k); 
-                            cout << "Из вершины " << v + 1 << " в вершину " << k + 1 << endl; 
-                        }
+    while (!q.empty()) {
+        int v = q.front();
+        q.pop();
+        cout << "Посещена вершина: " << v + 1 << endl;
+
+        for (int u = 0; u < graph->m; u++) {
+            if (graph->matrix[v][u] == -1) {
+                for (int k = 0; k < graph->n; k++) {
+                    if (graph->matrix[k][u] == 1 && !visited[k]) {
+                        visited[k] = true;
+                        q.push(k);
+                        cout << "Переход из " << v + 1 << " в " << k + 1 << endl;
                     }
                 }
             }
         }
-        cout << "Обход в ширину окончен." << endl;
     }
-};
+    cout << "Обход завершён.\n";
+}
+
+
 void ShowMenu() {
     cout << "=== Меню ===\n";
     cout << "1. Вывести матрицу\n";
@@ -166,28 +157,31 @@ void ShowMenu() {
     cout << "3. Удалить вершину\n";
     cout << "4. Добавить дугу\n";
     cout << "5. Удалить дугу\n";
-    cout << "6. Обойти граф в ширину\n";
+    cout << "6. Обход в ширину\n";
     cout << "7. Выход\n";
     cout << "Выберите опцию: ";
 }
 
-int main() {
+void prog() {
     setlocale(LC_ALL, "ru");
-    Graph graph;
-    graph.InputMatrix();
+    Graph* graph = new Graph();
+    InputMatrix(graph);
+
     int choice;
     do {
         ShowMenu();
         cin >> choice;
         switch (choice) {
-        case 1: graph.PrintMatrix(); break;
-        case 2: graph.AddVertex(); break;
-        case 3: graph.DelVertex(); break;
-        case 4: graph.AddArc(); break;
-        case 5: graph.DelArc(); break;
-        case 7: cout << "До свидания!" << endl; break;
-        default: cout << "Неверный выбор." << endl; break;
+        case 1: PrintMatrix(graph); break;
+        case 2: AddVertex(graph); break;
+        case 3: DelVertex(graph); break;
+        case 4: AddArc(graph); break;
+        case 5: DelArc(graph); break;
+        case 6: BFS(graph); break;
+        case 7: cout << "До свидания!\n"; break;
+        default: cout << "Ошибка: неверный выбор.\n"; break;
         }
     } while (choice != 7);
-    return 0;
+
+    delete graph;
 }
