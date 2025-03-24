@@ -232,9 +232,9 @@ int main() {
 ---
 
 ## Пример работы кода и тесты
-   <img src="https://i.ibb.co/HDkQmLYn/photo-2025-03-24-19-58-07.jpg" width="400" />
-
-   <img src="https://i.ibb.co/MytjtqBg/photo-2025-03-24-19-58-05.jpg" width="400" />
+   <img src="https://i.ibb.co/HDkQmLYn/photo-2025-03-24-19-58-07.jpg" width="800" />
+   <b>
+   <img src="https://i.ibb.co/MytjtqBg/photo-2025-03-24-19-58-05.jpg" width="800" />
 
 ## Вывод
 В ходе лабораторной работы была реализована программа разности двух множеств без учета кратных вхождений элементов.
