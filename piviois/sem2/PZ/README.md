@@ -13,29 +13,29 @@
 
 ![IMG_1](images/img1.png)
 
-### Её реализация в КВЕ:
+### Её реализация в КВЕ
 
-![IMG_2](Images/img2.png)
+![IMG_2](images/img2.jpg)
 
-### Её реализация в Protege:
+### Её реализация в Protege
 
-![IMG_3](Images/img3.png)
+![IMG_5](images/)
 
-![IMG_6](Images/img6.png)
+![IMG_6](images/)
 
-![IMG_7](Images/img7.png)
+![IMG_7](images/)
 
-![IMG_8](Images/img8.png)
+![IMG_8](images/)
 
 ---
 
-## Вторая задача:
+## Вторая задача
 
 ![IMG_4](Images/img4.png)
 
-### Её реализация в КВЕ:
+### Её реализация в КВЕ
 
-![IMG_5](Images/img5.png)
+![IMG_3](Images/img3.jpg)
 
 ---
 
