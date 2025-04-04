@@ -31,11 +31,11 @@
 
 ## Вторая задача
 
-![IMG_4](Images/img4.png)
+![IMG_4](images/img4.png)
 
 ### Её реализация в КВЕ
 
-![IMG_3](Images/img3.jpg)
+![IMG_3](images/img3.jpg)
 
 ---
 
