@@ -1,0 +1,16 @@
+[  9%] Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[ 18%] Linking CXX static library ../../lib/libgtest.a
+[ 18%] Built target gtest
+[ 27%] Building CXX object googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[ 36%] Linking CXX static library ../../lib/libgtest_main.a
+[ 36%] Built target gtest_main
+[ 45%] Building CXX object CMakeFiles/tests.dir/CantorovoSet.cpp.o
+[ 54%] Building CXX object CMakeFiles/tests.dir/tests.cpp.o
+[ 63%] Linking CXX executable tests
+[ 63%] Built target tests
+[ 72%] Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[ 81%] Linking CXX static library ../../lib/libgmock.a
+[ 81%] Built target gmock
+[ 90%] Building CXX object googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[100%] Linking CXX static library ../../lib/libgmock_main.a
+[100%] Built target gmock_main

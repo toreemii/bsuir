@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20251001-1616-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.28.3"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="vika-vivobook"
+	OSRelease="6.14.0-29-generic"
+	OSVersion="#29~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Aug 14 16:52:50 UTC 2"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="186"
+	ProcessorCacheSize="24576"
+	NumberOfLogicalCPU="20"
+	NumberOfPhysicalCPU="14"
+	TotalVirtualMemory="4095"
+	TotalPhysicalMemory="15615"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="1187.47"
+	>
+	<Testing>
+		<StartDateTime>Oct 01 20:38 +03</StartDateTime>
+		<StartTestTime>1759340310</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 01 20:38 +03</EndDateTime>
+		<EndTestTime>1759340310</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
