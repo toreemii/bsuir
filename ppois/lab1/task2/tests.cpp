@@ -5,44 +5,40 @@
 #include "RulesTable.h"
 #include "InputCheck.h"
 
-// Тест для проверки итерации машины Тьюринга с одним правилом
 TEST(TuringMachineTest, SingleIteration)
 {
     TuringMachine tm("101", "q0");
     RulesTable rules;
-    rules.AddRule("q0", "q1", '1', '0', 1); // При чтении '1' меняем на '0' и двигаемся вправо
+    rules.AddRule("q0", "q1", '1', '0', 1); 
     tm.TuringMachineIteration(rules);
-    EXPECT_EQ(tm.ReadElement(), '0'); // После итерации головка на позиции 1, лента: [0,0,1]
+    EXPECT_EQ(tm.ReadElement(), '0'); /
 }
 
-// Тест для проверки нескольких итераций машины Тьюринга
 TEST(TuringMachineTest, MultipleIterations)
 {
     TuringMachine tm("11", "q0");
     RulesTable rules;
-    rules.AddRule("q0", "q1", '1', '0', 1); // Меняем '1' на '0', двигаемся вправо
-    rules.AddRule("q1", "q2", '1', '0', 1); // Меняем '1' на '0', двигаемся вправо
-    tm.TuringMachineIteration(rules);       // Первая итерация: лента [0,1], head=1, state=q1
-    tm.TuringMachineIteration(rules);       // Вторая итерация: лента [0,0], head=2, state=q2
-    EXPECT_EQ(tm.ReadElement(), '_');       // Головка вышла за ленту, читаем '_'
+    rules.AddRule("q0", "q1", '1', '0', 1); 
+    rules.AddRule("q1", "q2", '1', '0', 1); 
+    tm.TuringMachineIteration(rules);       
+    tm.TuringMachineIteration(rules);       
+    EXPECT_EQ(tm.ReadElement(), '_');    
 }
 
-// Тест для проверки отсутствия подходящего правила
 TEST(TuringMachineTest, NoMatchingRule)
 {
     TuringMachine tm("101", "q0");
     RulesTable rules;
-    rules.AddRule("q0", "q1", '0', '1', 1); // Правило только для '0'
+    rules.AddRule("q0", "q1", '0', '1', 1); 
     std::stringstream buffer;
     std::streambuf *old = std::cout.rdbuf(buffer.rdbuf());
-    tm.TuringMachineIteration(rules); // Нет правила для '1' в состоянии q0
+    tm.TuringMachineIteration(rules); 
     std::cout.rdbuf(old);
     std::string output = buffer.str();
-    EXPECT_EQ(tm.ReadElement(), '1'); // Лента не изменилась, читаем '1'
+    EXPECT_EQ(tm.ReadElement(), '1'); 
     EXPECT_NE(output.find("Подходящего правила нет."), std::string::npos);
 }
 
-// Тест для проверки добавления нескольких правил и их поиска
 TEST(RulesTableTest, MultipleRules)
 {
     RulesTable rules;
