@@ -1,1 +1,0 @@
-/usr/bin/g++ -g -fprofile-arcs -ftest-coverage -g -O0  -fprofile-arcs -lgcov CMakeFiles/tests.dir/CantorovoSet.cpp.o CMakeFiles/tests.dir/tests.cpp.o -o tests  lib/libgtest.a lib/libgtest_main.a -lpthread -lgcov lib/libgtest.a 
