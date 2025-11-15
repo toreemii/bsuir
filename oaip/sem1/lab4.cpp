@@ -38,7 +38,7 @@ int main()
 	int k1 = 0;
 	for (int i = 0; i < n; i++)
 	{
-		int k = 0; //заводим счетчик
+		int k = 0;
 		for (int j = 0; j < n; j++)
 		{
 			if (m1[i] == m2[j])
