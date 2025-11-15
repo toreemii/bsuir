@@ -7,7 +7,7 @@ struct Spis2 {
     Spis2* prev;
 };
 
-Spis2* start = NULL, * ennd = NULL; // Глобальные указатели на начало и конец списка
+Spis2* start = NULL, * ennd = NULL;
 
 void Create_Spis2(Spis2** b, Spis2** e, int in) {
     Spis2* t = new Spis2;
@@ -23,13 +23,13 @@ void Add_Spis2(int kod, Spis2** b, Spis2** e, int in) {
     }
     Spis2* t = new Spis2;
     t->info = in;
-    if (kod == 0) { // Добавление в начало
+    if (kod == 0) { 
         t->prev = NULL;
         t->next = *b;
         (*b)->prev = t;
         *b = t;
     }
-    else { // Добавление в конец
+    else { 
         t->next = NULL;
         t->prev = *e;
         (*e)->next = t;
@@ -66,7 +66,6 @@ void perem(Spis2** oldstart, Spis2** oldend, Spis2** newstart, Spis2** newend) {
     Spis2* maxNode = *oldstart;
     Spis2* current = *oldstart;
 
-    // 1. Найдём максимальный элемент
     while (current != NULL) {
         if (current->info > maxNode->info) {
             maxNode = current;
@@ -74,21 +73,17 @@ void perem(Spis2** oldstart, Spis2** oldend, Spis2** newstart, Spis2** newend) {
         current = current->next;
     }
 
-    // Если максимум — это вершина, нет элементов для переноса
     if (maxNode == *oldstart) {
         cout << "Нет элементов между вершиной и максимумом!" << endl;
         return;
     }
 
-    // 2. Перенос элементов между вершиной и maxNode
-    current = (*oldstart)->next;  // Первый элемент (вершина) не переносим
+    current = (*oldstart)->next;  
     while (current != maxNode) {
-        Spis2* next = current->next;  // Сохраняем следующий элемент
+        Spis2* next = current->next;  
 
-        // Добавляем в новый список
         Add_Spis2(1, newstart, newend, current->info);
 
-        // Удаляем из старого списка
         if (current->prev)
             current->prev->next = current->next;
         if (current->next)
